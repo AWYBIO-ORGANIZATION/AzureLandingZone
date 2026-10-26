@@ -10,6 +10,10 @@ module "resource_group" {
     name = "git-rg"
     location = "central india"
   }
+  rg3={
+    name = "new-rg"
+    location = "central india"
+  }
   }
 }
 
