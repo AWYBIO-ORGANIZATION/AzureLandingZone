@@ -9,7 +9,7 @@ on:
 
         paths:
             - "Environment/dev/"
-            - "Environment/module/"   
+            - "module/"   
 
 jobs:
     validation-job:
