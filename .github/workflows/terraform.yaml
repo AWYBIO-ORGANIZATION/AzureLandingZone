@@ -1,29 +1,42 @@
+
 name: 01 - Production Workflow Trigger Demo
 
 on:
-    push:
-        branches:
-            - "feature/*"
-            - "main"
-            
+  push:
+    branches:
+      - "feature/*"
+      - "main"
+    paths:
+      - "Environment/dev/"
+      - "module/"
 
-        paths:
-            - "Environment/dev/*"
-            - "module/"   
+
 
 jobs:
-    validation-job:
-        runs-on: ubuntu-latest
-        
-        steps:
-            - name: Print Workflow Context
-              run: |
-               echo "Workflow triggered successfully"
-               echo "Event Type: $GITHUB_EVENT_NAME"
-               echo "Branch: $GITHUB_REF_NAME"
+  validation-job:
+    runs-on: ubuntu-latest
 
-            - name: RUN INIT
-              run: terraform init   
+    steps:
+      - name: Print Workflow Context
+        run: |
+          echo "Workflow triggered successfully"
+          echo "Event Type: $GITHUB_EVENT_NAME"
+          echo "Branch: $GITHUB_REF_NAME"
 
-            - name: RUN PLAN
-              run: terraform Plan  
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+
+
+
+      - name: Run Terraform Init
+        run: Environment/dev/terraform init
+
+      - name: Run Terraform Validate
+        run: Environment/dev/terraform validate
+
+      - name: Run Terraform Plan
+        run: Environment/dev/terraform plan
