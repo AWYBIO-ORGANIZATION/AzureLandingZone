@@ -11,6 +11,17 @@ on:
       - "Environment/dev/*"
       - "module/"
 
+   pull:
+    types:
+        - opened
+        - synchronize
+        - reopened
+        - ready_for_review
+
+    branches: 
+        - "main"    
+
+
 
 
 jobs:
@@ -24,20 +35,4 @@ jobs:
           echo "Event Type: $GITHUB_EVENT_NAME"
           echo "Branch: $GITHUB_REF_NAME"
 
-      - name: Checkout Repository
-        uses: actions/checkout@v4
-
-
-      - name: Setup Terraform
-        uses: hashicorp/setup-terraform@v3
-
-
-
-      - name: Run Terraform Init
-        run: Environment/dev/terraform init
-
-      - name: Run Terraform Validate
-        run: Environment/dev/terraform validate
-
-      - name: Run Terraform Plan
-        run: Environment/dev/terraform plan
+     
