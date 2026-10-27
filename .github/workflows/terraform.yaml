@@ -7,8 +7,8 @@ on:
             - "main"
 
         paths:
-            - "dev/**"
-            - "module/**"   
+            - "dev/"
+            - "module/"   
 
 jobs:
     validation-job:
