@@ -5,6 +5,11 @@ module "resource_group" {
     name = "axion-rg"
     location = "central india"
   }
+
+  rg1={
+    name = "axion-rg"
+    location = "central india"
+  }
  
   
 
