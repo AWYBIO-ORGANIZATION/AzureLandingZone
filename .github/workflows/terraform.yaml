@@ -11,15 +11,16 @@ on:
       - "Environment/dev/*"
       - "module/"
 
-   pull:
-    types:
-        - opened
-        - synchronize
-        - reopened
-        - ready_for_review
+  pull_request:
+     types:
+       - opened
+       - synchronize
+       - reopened
+       - closed
+       - ready_for_review
 
-    branches: 
-        - "main"    
+     branches:
+       - "main"    
 
 
 
