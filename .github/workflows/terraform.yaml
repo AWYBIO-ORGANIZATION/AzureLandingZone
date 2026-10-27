@@ -5,10 +5,11 @@ on:
         branches:
             - "feature/*"
             - "main"
+            
 
         paths:
-            - "dev/"
-            - "module/"   
+            - "Environment/dev/"
+            - "Environment/module/"   
 
 jobs:
     validation-job:
