@@ -6,7 +6,9 @@ on:
             - "feature/*"
             - "main"
 
-
+        paths:
+            - "dev/**"
+            - "module/**"   
 
 jobs:
     validation-job:
