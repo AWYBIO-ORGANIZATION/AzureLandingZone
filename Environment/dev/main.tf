@@ -6,12 +6,6 @@ module "resource_group" {
     location = "central india"
   }
 
-  
-
-  
-  
- 
-  
 
   }
 }
