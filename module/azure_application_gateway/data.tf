@@ -3,4 +3,3 @@ data "azurerm_subnet" "subnet-bastionhost" {
   virtual_network_name = "axion-vnet"
    resource_group_name = "axion-rg"
 
-}
