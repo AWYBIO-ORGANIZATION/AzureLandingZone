@@ -12,7 +12,7 @@ module "resource_group" {
   }
   }
 }
-}
+
 
 module "virtual_network" {
   source = "../../module/azure_virtual_network"
