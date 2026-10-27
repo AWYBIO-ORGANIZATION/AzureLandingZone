@@ -21,3 +21,9 @@ jobs:
                echo "Workflow triggered successfully"
                echo "Event Type: $GITHUB_EVENT_NAME"
                echo "Branch: $GITHUB_REF_NAME"
+
+            - name: RUN INIT
+              run: terraform init   
+
+            - name: RUN PLAN
+              run: terraform Plan  
