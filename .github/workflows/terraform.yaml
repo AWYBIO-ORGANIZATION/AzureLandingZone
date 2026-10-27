@@ -5,9 +5,10 @@ on:
   push:
     branches:
       - "feature/*"
-      - "main"
+      - "main"    
+
     paths:
-      - "Environment/dev/"
+      - "Environment/dev/*"
       - "module/"
 
 
